@@ -22,12 +22,22 @@ public class Main {
         
     }
     
+    static int getDigit(int k) {
+	    int digit = 0;
+	    while (k != 0) {
+		    k = k / 10;
+		    digit ++;
+	    }
+        return digit;
+    }
+    
     public static void main(String[] args) {
         
         input();
         int result = 0;
+        int digit = getDigit(N);
         
-        for (int i = 1; i < N; i++) {
+        for (int i = N - (digit * 9) ; i < N; i++) {
             if(N == sumOfNum(i)) {
                 result = i;
                 break;
